@@ -62,6 +62,7 @@ public class Player : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        PPhysicsInput();
         PMove();
     }
 
@@ -71,9 +72,20 @@ public class Player : MonoBehaviour {
 
         m_Motion = quat * new Vector3(m_MoveInput.x, 0, m_MoveInput.y) * PlayerPreferences.Instance.m_Acceleration;
 
-        if (m_Rigidbody.velocity.sqrMagnitude <= PlayerPreferences.Instance.m_Speed * PlayerPreferences.Instance.m_Speed) {
-            m_Rigidbody.AddForce(m_Motion, ForceMode.Acceleration);
-        }
+        Vector2 lateralMotion = new Vector2(
+            m_Rigidbody.velocity.x,
+            m_Rigidbody.velocity.z
+        );
+
+        float velocity = lateralMotion.magnitude;
+
+        float smoothStop = Mathf.Clamp01(PlayerPreferences.Instance.m_Speed - velocity);
+
+        if (smoothStop != 0) {
+            smoothStop = smoothStop * smoothStop;
+        };
+
+        m_Rigidbody.AddForce(m_Motion * smoothStop, ForceMode.Acceleration);
 
         if (m_JumpInput) {
             m_Rigidbody.AddForce(new Vector3(0, PlayerPreferences.Instance.m_Jump, 0), ForceMode.VelocityChange);
@@ -112,11 +124,6 @@ public class Player : MonoBehaviour {
     }
 
     private void PInput() {
-        m_MoveInput = new Vector2(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical")
-        );
-
         if (Input.GetAxis("Fire1") > 0.2f) {
             m_ThrowInput = !m_LockThrowInput;
 
@@ -126,6 +133,14 @@ public class Player : MonoBehaviour {
             m_LockThrowInput = false;
             m_ThrowInput     = false;
         }
+    }
+
+    private void PPhysicsInput() {
+
+        m_MoveInput = new Vector2(
+            Input.GetAxis("Horizontal"),
+            Input.GetAxis("Vertical")
+        );
 
         if (Input.GetAxis("Jump") > 0.2f) {
             m_JumpInput = !m_LockJumpInput;
@@ -134,7 +149,7 @@ public class Player : MonoBehaviour {
         }
         else {
             m_LockJumpInput = false;
-            m_JumpInput     = false;
+            m_JumpInput = false;
         }
     }
 

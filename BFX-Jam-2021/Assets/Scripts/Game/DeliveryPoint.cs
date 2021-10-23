@@ -18,9 +18,9 @@ public class DeliveryPoint : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision) {
+    private void OnTriggerEnter(Collider other) {
 
-        if (collision.transform.tag == "Newspaper") {
+        if (other.transform.tag == "Newspaper") {
 
             ItemDelivered?.Invoke(new ItemDeliveredArgs());
 
