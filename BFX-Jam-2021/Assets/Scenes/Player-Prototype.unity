@@ -1066,6 +1066,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4005584510280432795, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
+      propertyPath: subpixelMorphologicalAntialiasing.quality
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4615722208395552409, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
       propertyPath: m_RootOrder
       value: 1
