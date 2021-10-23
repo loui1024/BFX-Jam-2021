@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 10
   m_Acceleration: 20
-  m_ThrowPower: 1
+  m_ThrowObject: {fileID: 2498553150956447620, guid: c5777c218441910478b3f9ae50a058f9, type: 3}
+  m_ThrowOffset: {x: 0, y: 1, z: 1}
+  m_ThrowPower: 30
+  m_RandomSpin: 5

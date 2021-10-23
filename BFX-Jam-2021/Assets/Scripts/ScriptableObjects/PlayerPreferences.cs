@@ -24,5 +24,8 @@ public class PlayerPreferences : ScriptableObject {
     public float m_Acceleration;
 
     [Header("Throwing")]
+    public GameObject m_ThrowObject;
+    public Vector3 m_ThrowOffset;
     public float m_ThrowPower;
+    public float m_RandomSpin;
 }
