@@ -144,6 +144,9 @@ public class Player : MonoBehaviour {
     }
 
     private void PInput() {
+
+        Debug.Log(Input.GetAxis("Fire1"));
+
         if (Input.GetAxis("Fire1") > 0.2f) {
             m_ThrowInput = !m_LockThrowInput;
 
