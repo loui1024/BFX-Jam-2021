@@ -1187,7 +1187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2480911875945808975, guid: bc3665c420980c34bb26f1969aa1b5f6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21414888
+      value: 0.21414886
       objectReference: {fileID: 0}
     - target: {fileID: 2480911875945808975, guid: bc3665c420980c34bb26f1969aa1b5f6, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1195,7 +1195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2480911875945808975, guid: bc3665c420980c34bb26f1969aa1b5f6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.08870336
+      value: -0.088703364
       objectReference: {fileID: 0}
     - target: {fileID: 2480911875945808975, guid: bc3665c420980c34bb26f1969aa1b5f6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1244,7 +1244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4615722208395552409, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.21414888
+      value: 0.21414886
       objectReference: {fileID: 0}
     - target: {fileID: 4615722208395552409, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1252,7 +1252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4615722208395552409, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.08870336
+      value: -0.088703364
       objectReference: {fileID: 0}
     - target: {fileID: 4615722208395552409, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1283,6 +1283,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 558843872}
+    - target: {fileID: 3787356014376020520, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
+      propertyPath: m_ThrowPowerImage
+      value: 
+      objectReference: {fileID: 306691073}
     - target: {fileID: 3787356014376020523, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
       propertyPath: m_Name
       value: Player

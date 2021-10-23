@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class Player : MonoBehaviour {
 
     /* REFERENCES */
@@ -14,6 +16,9 @@ public class Player : MonoBehaviour {
     [Header("Throwing")]
     [SerializeField] private Transform m_Crosshair;
 
+    [Header("UI")]
+    [SerializeField] private Image m_ThrowPowerImage;
+
     /* PRIVATE */
     private Vector3 m_Motion;
 
@@ -25,10 +30,13 @@ public class Player : MonoBehaviour {
     private bool m_LockJumpInput  = false;
     private bool m_JumpInput      = false;
 
+    private float m_ThrowPowerDir = 1.0f;
+
     private int m_CurrentPoolItem = 0;
     private List<Rigidbody> m_ThrowPool;
 
     private readonly Vector3 ZERO3 = new Vector3();
+    private readonly Vector2 ZERO2 = new Vector2();
 
     private void Awake() {
 
@@ -59,11 +67,21 @@ public class Player : MonoBehaviour {
     private void LateUpdate() {
         PModel();
         PCrosshair();
+        PUI();
     }
 
     private void FixedUpdate() {
         PPhysicsInput();
         PMove();
+    }
+
+    private void PUI() {
+
+        m_ThrowPowerImage.fillAmount += ((m_ThrowPowerImage.fillAmount * Time.deltaTime * 10.0f) + (Time.deltaTime * 2.0f)) * m_ThrowPowerDir;
+
+        if (m_ThrowPowerImage.fillAmount >= 1.0f || m_ThrowPowerImage.fillAmount <= 0.0f) {
+            m_ThrowPowerDir *= -1f;
+        }
     }
 
     private void PMove() {
@@ -167,10 +185,20 @@ public class Player : MonoBehaviour {
     private void PCrosshair() {
 
         Vector2  bikePos = ((m_Camera.WorldToScreenPoint(transform.position) / new Vector2(Screen.width, Screen.height)) - new Vector2(0.5f, 0.5f)) * 2f;
-        Vector2 mousePos = ((Input.mousePosition / new Vector2(Screen.width, Screen.height)) - new Vector2(0.5f, 0.5f)) * 2f;
+        
+        Vector2 controllerInput = new Vector2(Input.GetAxis("Controller Look X"), -Input.GetAxis("Controller Look Y"));
 
-        float angle = Vector2.SignedAngle(new Vector2(0f, 1f), mousePos - bikePos);
+        float angle;
 
-        m_Crosshair.transform.eulerAngles = new Vector3(0, 45f - angle, 0);
+        if (controllerInput != ZERO2) {
+            angle = Vector2.SignedAngle(new Vector2(0f, 1f), controllerInput);
+        }
+        else {
+            Vector2 mousePos = ((Input.mousePosition / new Vector2(Screen.width, Screen.height)) - new Vector2(0.5f, 0.5f)) * 2f;
+
+            angle = Vector2.SignedAngle(new Vector2(0f, 1f), mousePos - bikePos);
+        }
+
+        m_Crosshair.transform.eulerAngles = new Vector3(0, 45.0f - angle, 0);
     }
 }
