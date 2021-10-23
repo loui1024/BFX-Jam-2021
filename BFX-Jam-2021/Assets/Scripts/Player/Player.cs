@@ -177,7 +177,7 @@ public class Player : MonoBehaviour {
         if (Input.GetAxis("Fire1") > 0.2f) {
 
             if (!m_ThrowInputHeld) {
-                m_ThrowPowerImage.fillAmount = Random.Range(0.0f, 0.75f);
+                m_ThrowPowerImage.fillAmount = Random.Range(0.0f, 0.6f);
             }
 
             m_ThrowInputHeld = true;
