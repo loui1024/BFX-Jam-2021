@@ -16,5 +16,6 @@ MonoBehaviour:
   m_Acceleration: 20
   m_ThrowObject: {fileID: 2498553150956447620, guid: c5777c218441910478b3f9ae50a058f9, type: 3}
   m_ThrowOffset: {x: 0, y: 1, z: 1}
+  m_ThrowPoolSize: 256
   m_ThrowPower: 30
   m_RandomSpin: 5

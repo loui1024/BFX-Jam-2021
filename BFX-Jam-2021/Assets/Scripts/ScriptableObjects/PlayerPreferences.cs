@@ -26,6 +26,7 @@ public class PlayerPreferences : ScriptableObject {
     [Header("Throwing")]
     public GameObject m_ThrowObject;
     public Vector3 m_ThrowOffset;
+    public int m_ThrowPoolSize;
     public float m_ThrowPower;
     public float m_RandomSpin;
 }

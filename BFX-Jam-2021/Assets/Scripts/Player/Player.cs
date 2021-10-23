@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
     /* REFERENCES */
     [SerializeField] private Rigidbody m_Rigidbody;
-    [SerializeField] private Camera m_Camera;
+    [SerializeField] private Camera    m_Camera;
 
     [Header("Bike")]
     [SerializeField] private Transform m_Model;
@@ -18,13 +18,18 @@ public class Player : MonoBehaviour {
     private Vector3 m_Motion;
 
     private Vector2 m_MoveInput;
-    private bool m_LockThrowInput;
-    private bool m_ThrowInput;
+
+    private bool m_LockThrowInput = false;
+    private bool m_ThrowInput     = false;
+
+    private int m_CurrentPoolItem = 0;
+    private List<Rigidbody> m_ThrowPool;
 
     private readonly Vector3 ZERO3 = new Vector3();
-    private readonly Vector2 ZERO2 = new Vector2();
 
     void Start() {
+
+        m_ThrowPool = new List<Rigidbody>(PlayerPreferences.Instance.m_ThrowPoolSize);
 
         if (!m_Rigidbody) {
             m_Rigidbody = GetComponent<Rigidbody>();
@@ -54,6 +59,7 @@ public class Player : MonoBehaviour {
     }
 
     void FixedUpdate() {
+
         Vector3 motion = new Vector3(m_MoveInput.x, 0, m_MoveInput.y);
 
         Quaternion quat = Quaternion.Euler(0, m_Camera.transform.eulerAngles.y, 0);
@@ -62,15 +68,32 @@ public class Player : MonoBehaviour {
 
         m_Rigidbody.AddForce(m_Motion, ForceMode.Acceleration);
         m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, PlayerPreferences.Instance.m_Speed);
-
     }
 
     void PThrow(float _power) {
-        var throwObject = GameObject.Instantiate(
-            PlayerPreferences.Instance.m_ThrowObject, 
-            transform.position + (transform.rotation * PlayerPreferences.Instance.m_ThrowOffset), 
-            m_Crosshair.rotation
-        ).GetComponent<Rigidbody>();
+
+        Rigidbody throwObject;
+
+        if (m_ThrowPool.Count < PlayerPreferences.Instance.m_ThrowPoolSize) {
+            throwObject = GameObject.Instantiate(
+                PlayerPreferences.Instance.m_ThrowObject,
+                transform.position + (transform.rotation * PlayerPreferences.Instance.m_ThrowOffset),
+                m_Crosshair.rotation
+            ).GetComponent<Rigidbody>();
+
+            m_ThrowPool.Add(throwObject);
+        }
+        else {
+            throwObject = m_ThrowPool[m_CurrentPoolItem];
+
+            throwObject.velocity = ZERO3;
+            throwObject.angularVelocity = ZERO3;
+
+            throwObject.position = transform.position + (transform.rotation * PlayerPreferences.Instance.m_ThrowOffset);
+            throwObject.rotation = m_Crosshair.rotation;
+
+            m_CurrentPoolItem = (int)Mathf.Repeat(m_CurrentPoolItem + 1, PlayerPreferences.Instance.m_ThrowPoolSize);
+        }
 
         throwObject.AddForce(m_Crosshair.forward * Mathf.LerpUnclamped(0, PlayerPreferences.Instance.m_ThrowPower, _power), ForceMode.VelocityChange);
         throwObject.AddTorque(Random.insideUnitSphere * PlayerPreferences.Instance.m_RandomSpin);
@@ -83,12 +106,7 @@ public class Player : MonoBehaviour {
         );
 
         if (Input.GetAxis("Fire1") > 0.2f) {
-            if (!m_LockThrowInput) {
-                m_ThrowInput = true;
-            }
-            else {
-                m_ThrowInput = false;
-            }
+            m_ThrowInput = !m_LockThrowInput;
 
             m_LockThrowInput = true;
         }
