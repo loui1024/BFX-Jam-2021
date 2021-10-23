@@ -18,14 +18,15 @@ public class Player : MonoBehaviour {
 
     [Header("UI")]
     [SerializeField] private Image m_ThrowPowerImage;
+    [SerializeField] private Gradient m_ThrowFillGradient;
 
     /* PRIVATE */
     private Vector3 m_Motion;
 
     private Vector2 m_MoveInput;
 
-    private bool m_LockThrowInput = false;
-    private bool m_ThrowInput     = false;
+    private bool  m_ThrowInputHeld = false;
+    private float m_ThrowInput     = -1.0f;
 
     private bool m_LockJumpInput  = false;
     private bool m_JumpInput      = false;
@@ -59,8 +60,10 @@ public class Player : MonoBehaviour {
     private void Update() {
         PInput();
 
-        if (m_ThrowInput) {
-            PThrow(1.0f);
+        if (m_ThrowInput > 0.0f) {
+            PThrow(m_ThrowInput);
+
+            m_ThrowInput = -1.0f;
         }
     }
 
@@ -77,11 +80,27 @@ public class Player : MonoBehaviour {
 
     private void PUI() {
 
-        m_ThrowPowerImage.fillAmount += ((m_ThrowPowerImage.fillAmount * Time.deltaTime * 10.0f) + (Time.deltaTime * 2.0f)) * m_ThrowPowerDir;
+        m_ThrowPowerImage.gameObject.SetActive(m_ThrowInputHeld);
 
-        if (m_ThrowPowerImage.fillAmount >= 1.0f || m_ThrowPowerImage.fillAmount <= 0.0f) {
-            m_ThrowPowerDir *= -1f;
+        if (m_ThrowPowerImage.gameObject.activeSelf) {
+            float dir = m_Crosshair.transform.eulerAngles.y <= 45.0f || m_Crosshair.transform.eulerAngles.y > 225.0f ? 1.0f : -1.0f;
+
+            m_ThrowPowerImage.rectTransform.position = Vector3.Lerp(
+                m_ThrowPowerImage.rectTransform.position,
+                m_Camera.WorldToScreenPoint(transform.position) + new Vector3(90 * dir, 0, 0),
+                Time.deltaTime * 8.0f
+            );
+
+            m_ThrowPowerImage.fillAmount += ((m_ThrowPowerImage.fillAmount * Time.deltaTime * 4.0f) + (Time.deltaTime * 1.0f)) * m_ThrowPowerDir;
+
+            if (m_ThrowPowerImage.fillAmount >= 1.0f || m_ThrowPowerImage.fillAmount <= 0.0f)
+            {
+                m_ThrowPowerDir *= -1f;
+            }
+
+            m_ThrowPowerImage.color = m_ThrowFillGradient.Evaluate(m_ThrowPowerImage.fillAmount);
         }
+
     }
 
     private void PMove() {
@@ -145,16 +164,20 @@ public class Player : MonoBehaviour {
 
     private void PInput() {
 
-        Debug.Log(Input.GetAxis("Fire1"));
-
         if (Input.GetAxis("Fire1") > 0.2f) {
-            m_ThrowInput = !m_LockThrowInput;
 
-            m_LockThrowInput = true;
+            if (!m_ThrowInputHeld) {
+                m_ThrowPowerImage.fillAmount = Random.Range(0.0f, 1.0f);
+            }
+
+            m_ThrowInputHeld = true;
         }
         else {
-            m_LockThrowInput = false;
-            m_ThrowInput     = false;
+            if (m_ThrowInputHeld == true) {
+                m_ThrowInput = m_ThrowPowerImage.fillAmount;
+            }
+
+            m_ThrowInputHeld = false;
         }
     }
 
