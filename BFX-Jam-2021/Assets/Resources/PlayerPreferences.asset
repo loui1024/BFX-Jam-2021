@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbb4772ee933234d8f3d8462584a592, type: 3}
   m_Name: PlayerPreferences
   m_EditorClassIdentifier: 
-  m_Speed: 10
+  m_Speed: 12
   m_Acceleration: 25
   m_Jump: 10
   m_ThrowObject: {fileID: 2498553150956447620, guid: c5777c218441910478b3f9ae50a058f9, type: 3}

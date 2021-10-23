@@ -30,7 +30,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 785823830117725678}
-  - {fileID: 785823830511630585}
   m_Father: {fileID: 785823831198667555}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -239,6 +238,7 @@ GameObject:
   - component: {fileID: 785823830511630585}
   - component: {fileID: 785823830511630587}
   - component: {fileID: 785823830511630586}
+  - component: {fileID: 9223145378515711575}
   m_Layer: 5
   m_Name: Justice_IMAGE
   m_TagString: Untagged
@@ -253,16 +253,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785823830511630584}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 785823829776830996}
-  m_RootOrder: 1
+  m_Father: {fileID: 785823831198667555}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -292.5}
   m_SizeDelta: {x: 130, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &785823830511630587
@@ -303,6 +303,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!111 &9223145378515711575
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785823830511630584}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3f8eca2c4d398144183cc4fdf9eeb651, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3f8eca2c4d398144183cc4fdf9eeb651, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &785823830683481195
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +493,7 @@ RectTransform:
   - {fileID: 785823830683481236}
   - {fileID: 785823830152317982}
   - {fileID: 785823829776830996}
+  - {fileID: 785823830511630585}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
