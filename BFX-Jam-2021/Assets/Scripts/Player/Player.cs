@@ -119,6 +119,8 @@ public class Player : MonoBehaviour {
 
         Vector2 randomTorque = Random.insideUnitCircle;
 
+        throwObject.velocity = m_Rigidbody.velocity;
+
         throwObject.AddForce(m_Crosshair.forward * Mathf.LerpUnclamped(0, PlayerPreferences.Instance.m_ThrowPower, _power), ForceMode.VelocityChange);
         throwObject.AddRelativeTorque(new Vector3(0, 0, Random.Range(-PlayerPreferences.Instance.m_RandomSpin / 2, PlayerPreferences.Instance.m_RandomSpin / 2)));
     }
@@ -137,9 +139,12 @@ public class Player : MonoBehaviour {
 
     private void PPhysicsInput() {
 
-        m_MoveInput = new Vector2(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical")
+        m_MoveInput = Vector2.ClampMagnitude(
+            new Vector2(
+                Input.GetAxis("Horizontal"),
+                Input.GetAxis("Vertical")
+            ), 
+            1.0f
         );
 
         if (Input.GetAxis("Jump") > 0.2f) {
