@@ -136,7 +136,7 @@ public class Player : MonoBehaviour {
 
         m_Rigidbody.AddForce(m_Motion * smoothStop, ForceMode.Acceleration);
 
-        if (m_JumpInput) {
+        if (m_JumpInput && Physics.Raycast(transform.position, new Vector3(0, -1, 0), 1.1f)) {
             m_Rigidbody.AddForce(new Vector3(0, PlayerPreferences.Instance.m_Jump, 0), ForceMode.VelocityChange);
         }
     }
@@ -165,8 +165,6 @@ public class Player : MonoBehaviour {
 
             m_CurrentPoolItem = (int)Mathf.Repeat(m_CurrentPoolItem + 1, PlayerPreferences.Instance.m_ThrowPoolSize);
         }
-
-        Vector2 randomTorque = Random.insideUnitCircle;
 
         throwObject.velocity = m_Rigidbody.velocity;
 
