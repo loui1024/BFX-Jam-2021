@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
     [Header("UI")]
     [SerializeField] private Image m_ThrowPowerImage;
     [SerializeField] private Gradient m_ThrowFillGradient;
+    [SerializeField] private Animation m_JusticePopupImage;
 
     /* PRIVATE */
     private Vector3 m_Motion;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour {
     private bool  m_ThrowInputHeld = false;
     private float m_ThrowInput     = -1.0f;
 
+    private bool m_JusticePopupTrigger = false;
     private bool m_LockJumpInput  = false;
     private bool m_JumpInput      = false;
 
@@ -42,6 +44,7 @@ public class Player : MonoBehaviour {
     private void Awake() {
 
         m_ThrowPool = new List<Rigidbody>(PlayerPreferences.Instance.m_ThrowPoolSize);
+        m_JusticePopupImage.transform.localScale = ZERO3;
 
         if (!m_Rigidbody) {
             m_Rigidbody = GetComponent<Rigidbody>();
@@ -61,6 +64,8 @@ public class Player : MonoBehaviour {
         PInput();
 
         if (m_ThrowInput > 0.0f) {
+            m_JusticePopupTrigger = m_ThrowInput >= 0.8f;
+            
             PThrow(m_ThrowInput);
 
             m_ThrowInput = -1.0f;
@@ -93,14 +98,21 @@ public class Player : MonoBehaviour {
 
             m_ThrowPowerImage.fillAmount += ((m_ThrowPowerImage.fillAmount * Time.deltaTime * 4.0f) + (Time.deltaTime * 1.0f)) * m_ThrowPowerDir;
 
-            if (m_ThrowPowerImage.fillAmount >= 1.0f || m_ThrowPowerImage.fillAmount <= 0.0f)
-            {
+            if (m_ThrowPowerImage.fillAmount >= 1.0f || m_ThrowPowerImage.fillAmount <= 0.0f) {
                 m_ThrowPowerDir *= -1f;
             }
 
             m_ThrowPowerImage.color = m_ThrowFillGradient.Evaluate(m_ThrowPowerImage.fillAmount);
         }
 
+        if (m_JusticePopupTrigger) {
+            m_JusticePopupImage.transform.position = m_ThrowPowerImage.transform.position;
+
+            m_JusticePopupImage.Stop();
+            m_JusticePopupImage.Play();
+
+            m_JusticePopupTrigger = false;
+        }
     }
 
     private void PMove() {
