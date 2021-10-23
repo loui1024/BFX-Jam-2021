@@ -22,6 +22,7 @@ public class PlayerPreferences : ScriptableObject {
     [Header("Movement")]
     public float m_Speed;
     public float m_Acceleration;
+    public float m_Jump;
 
     [Header("Throwing")]
     public GameObject m_ThrowObject;

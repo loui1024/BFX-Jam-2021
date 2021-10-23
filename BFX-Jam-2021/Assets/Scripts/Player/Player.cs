@@ -22,12 +22,15 @@ public class Player : MonoBehaviour {
     private bool m_LockThrowInput = false;
     private bool m_ThrowInput     = false;
 
+    private bool m_LockJumpInput  = false;
+    private bool m_JumpInput      = false;
+
     private int m_CurrentPoolItem = 0;
     private List<Rigidbody> m_ThrowPool;
 
     private readonly Vector3 ZERO3 = new Vector3();
 
-    void Start() {
+    private void Awake() {
 
         m_ThrowPool = new List<Rigidbody>(PlayerPreferences.Instance.m_ThrowPoolSize);
 
@@ -58,19 +61,26 @@ public class Player : MonoBehaviour {
         PCrosshair();
     }
 
-    void FixedUpdate() {
+    private void FixedUpdate() {
+        PMove();
+    }
 
-        Vector3 motion = new Vector3(m_MoveInput.x, 0, m_MoveInput.y);
+    private void PMove() {
 
         Quaternion quat = Quaternion.Euler(0, m_Camera.transform.eulerAngles.y, 0);
 
-        m_Motion = quat * motion * PlayerPreferences.Instance.m_Acceleration;
+        m_Motion = quat * new Vector3(m_MoveInput.x, 0, m_MoveInput.y) * PlayerPreferences.Instance.m_Acceleration;
 
-        m_Rigidbody.AddForce(m_Motion, ForceMode.Acceleration);
-        m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, PlayerPreferences.Instance.m_Speed);
+        if (m_Rigidbody.velocity.sqrMagnitude <= PlayerPreferences.Instance.m_Speed * PlayerPreferences.Instance.m_Speed) {
+            m_Rigidbody.AddForce(m_Motion, ForceMode.Acceleration);
+        }
+
+        if (m_JumpInput) {
+            m_Rigidbody.AddForce(new Vector3(0, PlayerPreferences.Instance.m_Jump, 0), ForceMode.VelocityChange);
+        }
     }
 
-    void PThrow(float _power) {
+    private void PThrow(float _power) {
 
         Rigidbody throwObject;
 
@@ -95,11 +105,13 @@ public class Player : MonoBehaviour {
             m_CurrentPoolItem = (int)Mathf.Repeat(m_CurrentPoolItem + 1, PlayerPreferences.Instance.m_ThrowPoolSize);
         }
 
+        Vector2 randomTorque = Random.insideUnitCircle;
+
         throwObject.AddForce(m_Crosshair.forward * Mathf.LerpUnclamped(0, PlayerPreferences.Instance.m_ThrowPower, _power), ForceMode.VelocityChange);
-        throwObject.AddTorque(Random.insideUnitSphere * PlayerPreferences.Instance.m_RandomSpin);
+        throwObject.AddRelativeTorque(new Vector3(0, 0, Random.Range(-PlayerPreferences.Instance.m_RandomSpin / 2, PlayerPreferences.Instance.m_RandomSpin / 2)));
     }
 
-    void PInput() {
+    private void PInput() {
         m_MoveInput = new Vector2(
             Input.GetAxis("Horizontal"),
             Input.GetAxis("Vertical")
@@ -114,20 +126,30 @@ public class Player : MonoBehaviour {
             m_LockThrowInput = false;
             m_ThrowInput     = false;
         }
+
+        if (Input.GetAxis("Jump") > 0.2f) {
+            m_JumpInput = !m_LockJumpInput;
+
+            m_LockJumpInput = true;
+        }
+        else {
+            m_LockJumpInput = false;
+            m_JumpInput     = false;
+        }
     }
 
-    void PModel() {
+    private void PModel() {
         if (m_Rigidbody.velocity != ZERO3) {
             m_Model.transform.forward = Vector3.Slerp(m_Model.transform.forward, m_Rigidbody.velocity, Time.deltaTime * 5.0f);
         }
     }
 
-    void PCrosshair() {
+    private void PCrosshair() {
 
         Vector2  bikePos = ((m_Camera.WorldToScreenPoint(transform.position) / new Vector2(Screen.width, Screen.height)) - new Vector2(0.5f, 0.5f)) * 2f;
         Vector2 mousePos = ((Input.mousePosition / new Vector2(Screen.width, Screen.height)) - new Vector2(0.5f, 0.5f)) * 2f;
 
-        float angle = Vector2.SignedAngle(new Vector2(0f, 1f), mousePos + bikePos);
+        float angle = Vector2.SignedAngle(new Vector2(0f, 1f), mousePos - bikePos);
 
         m_Crosshair.transform.eulerAngles = new Vector3(0, 45f - angle, 0);
     }
