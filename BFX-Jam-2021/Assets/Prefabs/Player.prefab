@@ -5217,6 +5217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Rigidbody: {fileID: 3787356014376020521}
   m_Camera: {fileID: 0}
+  m_CinemachineVirtualCamera: {fileID: 0}
   m_Model: {fileID: 3787356015492686958}
   m_Turret: {fileID: 1196729647480055171}
   m_Crosshair: {fileID: 8399157993842807099}

@@ -101,7 +101,7 @@ public class Player : MonoBehaviour {
             float shakeDuration;
 
             if (m_JusticePopupTrigger = m_ThrowInput >= 0.8f) {
-                ShockWave.Get(m_Camera).StartIt(transform.position + (transform.rotation * PlayerPreferences.Instance.m_ThrowOffset), 5.0f, 0.05f, 0.03f, 0.25f);
+                ShockWave.Get(m_Camera).StartIt(transform.position + (transform.rotation * PlayerPreferences.Instance.m_ThrowOffset), 8.0f, 0.05f, 0.03f, 0.1f);
 
                 shakeFrequency = 0.08f;
                 shakeAmount    = 20.0f;

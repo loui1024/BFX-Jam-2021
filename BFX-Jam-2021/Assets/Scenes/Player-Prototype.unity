@@ -198,28 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1154812809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2480911875264998929, guid: bc3665c420980c34bb26f1969aa1b5f6, type: 3}
-  m_PrefabInstance: {fileID: 2480911875777893689}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1154812814
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154812809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-  m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 0
-  m_FrequencyGain: 0.1
-  mNoiseOffsets: {x: -861.03345, y: 286.0577, z: -409.36194}
 --- !u!111 &1175164656 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 8782826557898170369, guid: c6772518325b6d642906e07fac4dba29, type: 3}
@@ -839,10 +817,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cinemachine Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 5660402449583256396, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
-      propertyPath: textureRamp
-      value: 
-      objectReference: {fileID: 2800000, guid: 95ef4804fe0be4c999ddaa383536cde8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
 --- !u!1001 &8088564070357115089
@@ -923,14 +897,6 @@ PrefabInstance:
     - target: {fileID: 3787356014376020565, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6805739972952746802, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088564070399770275, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}

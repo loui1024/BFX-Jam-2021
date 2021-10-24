@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f9ddac5d4ec7d448374080b8f3993e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TimerHandImage: {fileID: 0}
