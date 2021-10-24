@@ -96,7 +96,7 @@ public class Player : MonoBehaviour {
                 Time.deltaTime * 8.0f
             );
 
-            m_ThrowPowerImage.fillAmount += ((m_ThrowPowerImage.fillAmount * Time.deltaTime * 4.0f) + (Time.deltaTime * 1.0f)) * m_ThrowPowerDir;
+            m_ThrowPowerImage.fillAmount += ((m_ThrowPowerImage.fillAmount * Time.deltaTime * 4.0f) + Time.deltaTime) * m_ThrowPowerDir;
 
             if (m_ThrowPowerImage.fillAmount >= 1.0f || m_ThrowPowerImage.fillAmount <= 0.0f) {
                 m_ThrowPowerDir *= -1f;
