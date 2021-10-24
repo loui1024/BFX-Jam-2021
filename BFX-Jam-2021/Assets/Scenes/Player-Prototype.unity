@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f5b0f7c3873304ab64e37b57cf0312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Renderer: {fileID: 210950302}
   m_Materials:
   - {fileID: 2100000, guid: bcb0ac4ee11e7d44d8af7e8eba45fbf6, type: 2}
   - {fileID: 2100000, guid: fa2b2ea972c45834ea273111151e065d, type: 2}
@@ -161,11 +160,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1f5a65e16b3907c428e036cb58a462da, type: 2}
   - {fileID: 2100000, guid: aa4b669ac1507734aacc7d6755519258, type: 2}
   - {fileID: 2100000, guid: d8c7106e53ecfa7438179cb42f0aeac2, type: 2}
---- !u!137 &210950302 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5918441600990014334, guid: f076f20f25a473940abdb5ba05221a9a, type: 3}
-  m_PrefabInstance: {fileID: 3580266006545160122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &284616176
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,6 +965,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 785823831198667553, guid: c6772518325b6d642906e07fac4dba29, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1980
+      objectReference: {fileID: 0}
+    - target: {fileID: 785823831198667553, guid: c6772518325b6d642906e07fac4dba29, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 785823831198667554, guid: c6772518325b6d642906e07fac4dba29, type: 3}
       propertyPath: m_Camera
       value: 

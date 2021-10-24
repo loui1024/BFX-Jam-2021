@@ -1016,8 +1016,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BossManPanel: {fileID: 4180905861127707737}
   MadScientistPanel: {fileID: 4180905860588914045}
-  m_CarPrice: 300
-  m_TankPrice: 600
   m_EnableTank: 0
   m_EnableCar: 0
   m_SelectCarTEXT: {fileID: 8143064572677312585}
@@ -1028,6 +1026,8 @@ MonoBehaviour:
   m_BuyTankTEXT: {fileID: 8641599534361096771}
   m_NotEnoughMoneyTEXT: {fileID: 4668378242942625707}
   m_DefaultTextLabTEXT: {fileID: 1186952575965277628}
+  m_CarSelectBUTTON: {fileID: 7429370398673110338}
+  m_TankSelectBUTTON: {fileID: 4180905862118880120}
 --- !u!1 &4180905860913635697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,7 +2462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4180905862118880121
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3130,7 +3130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3984896805050853001
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3235,7 +3235,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4180905860826554913}
         m_TargetAssemblyTypeName: BossmanMenu, Assembly-CSharp
-        m_MethodName: SelectBicycle
+        m_MethodName: SelectCar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

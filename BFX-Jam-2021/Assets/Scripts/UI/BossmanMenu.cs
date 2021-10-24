@@ -15,29 +15,21 @@ public class BossmanMenu : MonoBehaviour
    
     private int m_TankPrice = 0;
 
-    [SerializeField]
-    private bool m_EnableTank;
 
-    [SerializeField]
-    private bool m_EnableCar;
-
-
+    //// TEXT
     public GameObject m_SelectCarTEXT;
-
     public GameObject m_SelectTankTEXT;
-
     public GameObject m_SelectBikeTEXT;
-
     public GameObject m_DefaultTEXT;
-
     public GameObject m_BuyCarTEXT;
-
     public GameObject m_BuyTankTEXT;
-
     public GameObject m_NotEnoughMoneyTEXT;
-
     public GameObject m_DefaultTextLabTEXT;
 
+    //// BUTTONS
+
+    public GameObject m_CarSelectBUTTON;
+    public GameObject m_TankSelectBUTTON;
     public void GoToLab() {
         SetAllTextToFalse();
         m_DefaultTextLabTEXT.SetActive(true);
@@ -54,35 +46,43 @@ public class BossmanMenu : MonoBehaviour
         
         SetAllTextToFalse();
         m_SelectBikeTEXT.SetActive(true);
+        Player.Instance.gameObject.GetComponent<SwitchVehicle>().SetBike();
         //Code to switch to bike
     }
     public void SelectTank() {
         SetAllTextToFalse();
         m_SelectTankTEXT.SetActive(true);
-        //Code to switch to tank
+        Player.Instance.gameObject.GetComponent<SwitchVehicle>().SetTank();
     }
     public void SelectCar() {
         SetAllTextToFalse();
         m_SelectCarTEXT.SetActive(true);
-        //Code to switch to Car
+        Player.Instance.gameObject.GetComponent<SwitchVehicle>().SetCar();
+     
     }
     public void BuyTank() {
         if (Player.Instance.Money >= m_TankPrice) {
-            Player.Instance.Money = Player.Instance.Money - m_CarPrice;
-            m_EnableTank = true;
+            Player.Instance.Money = Player.Instance.Money - m_TankPrice;
+
             SetAllTextToFalse();
             m_BuyTankTEXT.SetActive(true);
+            m_TankSelectBUTTON.SetActive(true);
+
         }
-        SetAllTextToFalse();
-        m_NotEnoughMoneyTEXT.SetActive(true);
+        else {
+            SetAllTextToFalse();
+            m_NotEnoughMoneyTEXT.SetActive(true);
+        }
     }
 
     public void BuyCar() {
-        if (Player.Instance.Money >= m_TankPrice) {
-            Player.Instance.Money = Player.Instance.Money - m_TankPrice;
-            m_EnableCar = true;
+        if (Player.Instance.Money >= m_CarPrice) {
+            Player.Instance.Money = Player.Instance.Money - m_CarPrice;
+           
             SetAllTextToFalse();
             m_BuyCarTEXT.SetActive(true);
+            m_CarSelectBUTTON.SetActive(true);
+           
         }
         else {
             SetAllTextToFalse();
