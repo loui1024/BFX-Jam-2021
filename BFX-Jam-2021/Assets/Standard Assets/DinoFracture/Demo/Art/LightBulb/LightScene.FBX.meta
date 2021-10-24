@@ -1,99 +1,222 @@
 fileFormatVersion: 2
 guid: bc8404cc02e41ec43b1a2570ab6a30ad
 ModelImporter:
-  serializedVersion: 16
-  fileIDToRecycleName:
-    100000: FuseBox
-    100002: FuseboxPanel
-    100004: LightBulb
-    100006: //RootNode
-    100008: Line001
-    100010: Stand
-    100012: Wire
-    100014: FuseBoxPanel
-    100016: LightBulbBase
-    400000: FuseBox
-    400002: FuseboxPanel
-    400004: LightBulb
-    400006: //RootNode
-    400008: Line001
-    400010: Stand
-    400012: Wire
-    400014: FuseBoxPanel
-    400016: LightBulbBase
-    2300000: FuseBox
-    2300002: FuseboxPanel
-    2300004: LightBulb
-    2300006: Stand
-    2300008: Wire
-    2300010: FuseBoxPanel
-    2300012: LightBulbBase
-    3300000: FuseBox
-    3300002: FuseboxPanel
-    3300004: LightBulb
-    3300006: Stand
-    3300008: Wire
-    3300010: FuseBoxPanel
-    3300012: LightBulbBase
-    4300000: FuseBox
-    4300002: Stand
-    4300004: LightBulb
-    4300006: Wire
-    4300008: FuseboxPanel
-    4300010: FuseBoxPanel
-    4300012: LightBulbBase
-    9500000: //RootNode
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: FuseBox
+  - first:
+      1: 100002
+    second: FuseboxPanel
+  - first:
+      1: 100004
+    second: LightBulb
+  - first:
+      1: 100006
+    second: //RootNode
+  - first:
+      1: 100008
+    second: Line001
+  - first:
+      1: 100010
+    second: Stand
+  - first:
+      1: 100012
+    second: Wire
+  - first:
+      1: 100014
+    second: FuseBoxPanel
+  - first:
+      1: 100016
+    second: LightBulbBase
+  - first:
+      4: 400000
+    second: FuseBox
+  - first:
+      4: 400002
+    second: FuseboxPanel
+  - first:
+      4: 400004
+    second: LightBulb
+  - first:
+      4: 400006
+    second: //RootNode
+  - first:
+      4: 400008
+    second: Line001
+  - first:
+      4: 400010
+    second: Stand
+  - first:
+      4: 400012
+    second: Wire
+  - first:
+      4: 400014
+    second: FuseBoxPanel
+  - first:
+      4: 400016
+    second: LightBulbBase
+  - first:
+      23: 2300000
+    second: FuseBox
+  - first:
+      23: 2300002
+    second: FuseboxPanel
+  - first:
+      23: 2300004
+    second: LightBulb
+  - first:
+      23: 2300006
+    second: Stand
+  - first:
+      23: 2300008
+    second: Wire
+  - first:
+      23: 2300010
+    second: FuseBoxPanel
+  - first:
+      23: 2300012
+    second: LightBulbBase
+  - first:
+      33: 3300000
+    second: FuseBox
+  - first:
+      33: 3300002
+    second: FuseboxPanel
+  - first:
+      33: 3300004
+    second: LightBulb
+  - first:
+      33: 3300006
+    second: Stand
+  - first:
+      33: 3300008
+    second: Wire
+  - first:
+      33: 3300010
+    second: FuseBoxPanel
+  - first:
+      33: 3300012
+    second: LightBulbBase
+  - first:
+      43: 4300000
+    second: FuseBox
+  - first:
+      43: 4300002
+    second: Stand
+  - first:
+      43: 4300004
+    second: LightBulb
+  - first:
+      43: 4300006
+    second: Wire
+  - first:
+      43: 4300008
+    second: FuseboxPanel
+  - first:
+      43: 4300010
+    second: FuseBoxPanel
+  - first:
+      43: 4300012
+    second: LightBulbBase
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
-    meshCompression: 0
+    globalScale: 0.01
+    meshCompression: 1
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.01
     rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

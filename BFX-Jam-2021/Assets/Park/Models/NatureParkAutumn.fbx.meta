@@ -1,222 +1,557 @@
 fileFormatVersion: 2
 guid: 43fd3e8d43e912548876e99850c753fc
-timeCreated: 1462024120
-licenseType: Store
 ModelImporter:
-  serializedVersion: 18
-  fileIDToRecycleName:
-    100000: Bench
-    100002: BenchTable
-    100004: Boat
-    100006: Bridge
-    100008: Bush
-    100010: DoubleBench
-    100012: FanceConnector
-    100014: Fence_0
-    100016: Flowers
-    100018: Fountain1
-    100020: Fountain_1
-    100022: GrassTile
-    100024: Lamp
-    100026: //RootNode
-    100028: Rock
-    100030: Tile_Area
-    100032: Tile_Area2
-    100034: Tile_Corner
-    100036: Tile_High
-    100038: Tile_Intersection
-    100040: Tile_Intersection2
-    100042: Tile_Road
-    100044: Tole_Med
-    100046: Trassh Bin
-    100048: Tree_1
-    100050: Tree_2
-    100052: Tree_3
-    100054: Tree_4
-    100056: Tree_5
-    100058: WaterTile.
-    100060: Wooden Bridge
-    400000: Bench
-    400002: BenchTable
-    400004: Boat
-    400006: Bridge
-    400008: Bush
-    400010: DoubleBench
-    400012: FanceConnector
-    400014: Fence_0
-    400016: Flowers
-    400018: Fountain1
-    400020: Fountain_1
-    400022: GrassTile
-    400024: Lamp
-    400026: //RootNode
-    400028: Rock
-    400030: Tile_Area
-    400032: Tile_Area2
-    400034: Tile_Corner
-    400036: Tile_High
-    400038: Tile_Intersection
-    400040: Tile_Intersection2
-    400042: Tile_Road
-    400044: Tole_Med
-    400046: Trassh Bin
-    400048: Tree_1
-    400050: Tree_2
-    400052: Tree_3
-    400054: Tree_4
-    400056: Tree_5
-    400058: WaterTile.
-    400060: Wooden Bridge
-    2300000: Bench
-    2300002: BenchTable
-    2300004: Boat
-    2300006: Bridge
-    2300008: Bush
-    2300010: DoubleBench
-    2300012: FanceConnector
-    2300014: Fence_0
-    2300016: Flowers
-    2300018: Fountain1
-    2300020: Fountain_1
-    2300022: GrassTile
-    2300024: Lamp
-    2300026: Rock
-    2300028: Tile_Area
-    2300030: Tile_Area2
-    2300032: Tile_Corner
-    2300034: Tile_High
-    2300036: Tile_Intersection
-    2300038: Tile_Intersection2
-    2300040: Tile_Road
-    2300042: Tole_Med
-    2300044: Trassh Bin
-    2300046: Tree_1
-    2300048: Tree_2
-    2300050: Tree_3
-    2300052: Tree_4
-    2300054: Tree_5
-    2300056: WaterTile.
-    2300058: Wooden Bridge
-    3300000: Bench
-    3300002: BenchTable
-    3300004: Boat
-    3300006: Bridge
-    3300008: Bush
-    3300010: DoubleBench
-    3300012: FanceConnector
-    3300014: Fence_0
-    3300016: Flowers
-    3300018: Fountain1
-    3300020: Fountain_1
-    3300022: GrassTile
-    3300024: Lamp
-    3300026: Rock
-    3300028: Tile_Area
-    3300030: Tile_Area2
-    3300032: Tile_Corner
-    3300034: Tile_High
-    3300036: Tile_Intersection
-    3300038: Tile_Intersection2
-    3300040: Tile_Road
-    3300042: Tole_Med
-    3300044: Trassh Bin
-    3300046: Tree_1
-    3300048: Tree_2
-    3300050: Tree_3
-    3300052: Tree_4
-    3300054: Tree_5
-    3300056: WaterTile.
-    3300058: Wooden Bridge
-    4300000: Bench
-    4300002: Fountain1
-    4300004: Fountain_1
-    4300006: Tree_5
-    4300008: Trassh Bin
-    4300010: Flowers
-    4300012: Bush
-    4300014: Tree_4
-    4300016: Tree_2
-    4300018: Tree_1
-    4300020: Lamp
-    4300022: Rock
-    4300024: Fence_0
-    4300026: FanceConnector
-    4300028: Tile_Intersection2
-    4300030: Tile_Road
-    4300032: Boat
-    4300034: Wooden Bridge
-    4300036: Bridge
-    4300038: GrassTile
-    4300040: Tile_Area2
-    4300042: Tile_Corner
-    4300044: WaterTile.
-    4300046: Tole_Med
-    4300048: Tile_Area
-    4300050: Tile_Intersection
-    4300052: Tile_High
-    4300054: Tree_3
-    4300056: BenchTable
-    4300058: DoubleBench
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bench
+  - first:
+      1: 100002
+    second: BenchTable
+  - first:
+      1: 100004
+    second: Boat
+  - first:
+      1: 100006
+    second: Bridge
+  - first:
+      1: 100008
+    second: Bush
+  - first:
+      1: 100010
+    second: DoubleBench
+  - first:
+      1: 100012
+    second: FanceConnector
+  - first:
+      1: 100014
+    second: Fence_0
+  - first:
+      1: 100016
+    second: Flowers
+  - first:
+      1: 100018
+    second: Fountain1
+  - first:
+      1: 100020
+    second: Fountain_1
+  - first:
+      1: 100022
+    second: GrassTile
+  - first:
+      1: 100024
+    second: Lamp
+  - first:
+      1: 100026
+    second: //RootNode
+  - first:
+      1: 100028
+    second: Rock
+  - first:
+      1: 100030
+    second: Tile_Area
+  - first:
+      1: 100032
+    second: Tile_Area2
+  - first:
+      1: 100034
+    second: Tile_Corner
+  - first:
+      1: 100036
+    second: Tile_High
+  - first:
+      1: 100038
+    second: Tile_Intersection
+  - first:
+      1: 100040
+    second: Tile_Intersection2
+  - first:
+      1: 100042
+    second: Tile_Road
+  - first:
+      1: 100044
+    second: Tole_Med
+  - first:
+      1: 100046
+    second: Trassh Bin
+  - first:
+      1: 100048
+    second: Tree_1
+  - first:
+      1: 100050
+    second: Tree_2
+  - first:
+      1: 100052
+    second: Tree_3
+  - first:
+      1: 100054
+    second: Tree_4
+  - first:
+      1: 100056
+    second: Tree_5
+  - first:
+      1: 100058
+    second: WaterTile.
+  - first:
+      1: 100060
+    second: Wooden Bridge
+  - first:
+      4: 400000
+    second: Bench
+  - first:
+      4: 400002
+    second: BenchTable
+  - first:
+      4: 400004
+    second: Boat
+  - first:
+      4: 400006
+    second: Bridge
+  - first:
+      4: 400008
+    second: Bush
+  - first:
+      4: 400010
+    second: DoubleBench
+  - first:
+      4: 400012
+    second: FanceConnector
+  - first:
+      4: 400014
+    second: Fence_0
+  - first:
+      4: 400016
+    second: Flowers
+  - first:
+      4: 400018
+    second: Fountain1
+  - first:
+      4: 400020
+    second: Fountain_1
+  - first:
+      4: 400022
+    second: GrassTile
+  - first:
+      4: 400024
+    second: Lamp
+  - first:
+      4: 400026
+    second: //RootNode
+  - first:
+      4: 400028
+    second: Rock
+  - first:
+      4: 400030
+    second: Tile_Area
+  - first:
+      4: 400032
+    second: Tile_Area2
+  - first:
+      4: 400034
+    second: Tile_Corner
+  - first:
+      4: 400036
+    second: Tile_High
+  - first:
+      4: 400038
+    second: Tile_Intersection
+  - first:
+      4: 400040
+    second: Tile_Intersection2
+  - first:
+      4: 400042
+    second: Tile_Road
+  - first:
+      4: 400044
+    second: Tole_Med
+  - first:
+      4: 400046
+    second: Trassh Bin
+  - first:
+      4: 400048
+    second: Tree_1
+  - first:
+      4: 400050
+    second: Tree_2
+  - first:
+      4: 400052
+    second: Tree_3
+  - first:
+      4: 400054
+    second: Tree_4
+  - first:
+      4: 400056
+    second: Tree_5
+  - first:
+      4: 400058
+    second: WaterTile.
+  - first:
+      4: 400060
+    second: Wooden Bridge
+  - first:
+      23: 2300000
+    second: Bench
+  - first:
+      23: 2300002
+    second: BenchTable
+  - first:
+      23: 2300004
+    second: Boat
+  - first:
+      23: 2300006
+    second: Bridge
+  - first:
+      23: 2300008
+    second: Bush
+  - first:
+      23: 2300010
+    second: DoubleBench
+  - first:
+      23: 2300012
+    second: FanceConnector
+  - first:
+      23: 2300014
+    second: Fence_0
+  - first:
+      23: 2300016
+    second: Flowers
+  - first:
+      23: 2300018
+    second: Fountain1
+  - first:
+      23: 2300020
+    second: Fountain_1
+  - first:
+      23: 2300022
+    second: GrassTile
+  - first:
+      23: 2300024
+    second: Lamp
+  - first:
+      23: 2300026
+    second: Rock
+  - first:
+      23: 2300028
+    second: Tile_Area
+  - first:
+      23: 2300030
+    second: Tile_Area2
+  - first:
+      23: 2300032
+    second: Tile_Corner
+  - first:
+      23: 2300034
+    second: Tile_High
+  - first:
+      23: 2300036
+    second: Tile_Intersection
+  - first:
+      23: 2300038
+    second: Tile_Intersection2
+  - first:
+      23: 2300040
+    second: Tile_Road
+  - first:
+      23: 2300042
+    second: Tole_Med
+  - first:
+      23: 2300044
+    second: Trassh Bin
+  - first:
+      23: 2300046
+    second: Tree_1
+  - first:
+      23: 2300048
+    second: Tree_2
+  - first:
+      23: 2300050
+    second: Tree_3
+  - first:
+      23: 2300052
+    second: Tree_4
+  - first:
+      23: 2300054
+    second: Tree_5
+  - first:
+      23: 2300056
+    second: WaterTile.
+  - first:
+      23: 2300058
+    second: Wooden Bridge
+  - first:
+      33: 3300000
+    second: Bench
+  - first:
+      33: 3300002
+    second: BenchTable
+  - first:
+      33: 3300004
+    second: Boat
+  - first:
+      33: 3300006
+    second: Bridge
+  - first:
+      33: 3300008
+    second: Bush
+  - first:
+      33: 3300010
+    second: DoubleBench
+  - first:
+      33: 3300012
+    second: FanceConnector
+  - first:
+      33: 3300014
+    second: Fence_0
+  - first:
+      33: 3300016
+    second: Flowers
+  - first:
+      33: 3300018
+    second: Fountain1
+  - first:
+      33: 3300020
+    second: Fountain_1
+  - first:
+      33: 3300022
+    second: GrassTile
+  - first:
+      33: 3300024
+    second: Lamp
+  - first:
+      33: 3300026
+    second: Rock
+  - first:
+      33: 3300028
+    second: Tile_Area
+  - first:
+      33: 3300030
+    second: Tile_Area2
+  - first:
+      33: 3300032
+    second: Tile_Corner
+  - first:
+      33: 3300034
+    second: Tile_High
+  - first:
+      33: 3300036
+    second: Tile_Intersection
+  - first:
+      33: 3300038
+    second: Tile_Intersection2
+  - first:
+      33: 3300040
+    second: Tile_Road
+  - first:
+      33: 3300042
+    second: Tole_Med
+  - first:
+      33: 3300044
+    second: Trassh Bin
+  - first:
+      33: 3300046
+    second: Tree_1
+  - first:
+      33: 3300048
+    second: Tree_2
+  - first:
+      33: 3300050
+    second: Tree_3
+  - first:
+      33: 3300052
+    second: Tree_4
+  - first:
+      33: 3300054
+    second: Tree_5
+  - first:
+      33: 3300056
+    second: WaterTile.
+  - first:
+      33: 3300058
+    second: Wooden Bridge
+  - first:
+      43: 4300000
+    second: Bench
+  - first:
+      43: 4300002
+    second: Fountain1
+  - first:
+      43: 4300004
+    second: Fountain_1
+  - first:
+      43: 4300006
+    second: Tree_5
+  - first:
+      43: 4300008
+    second: Trassh Bin
+  - first:
+      43: 4300010
+    second: Flowers
+  - first:
+      43: 4300012
+    second: Bush
+  - first:
+      43: 4300014
+    second: Tree_4
+  - first:
+      43: 4300016
+    second: Tree_2
+  - first:
+      43: 4300018
+    second: Tree_1
+  - first:
+      43: 4300020
+    second: Lamp
+  - first:
+      43: 4300022
+    second: Rock
+  - first:
+      43: 4300024
+    second: Fence_0
+  - first:
+      43: 4300026
+    second: FanceConnector
+  - first:
+      43: 4300028
+    second: Tile_Intersection2
+  - first:
+      43: 4300030
+    second: Tile_Road
+  - first:
+      43: 4300032
+    second: Boat
+  - first:
+      43: 4300034
+    second: Wooden Bridge
+  - first:
+      43: 4300036
+    second: Bridge
+  - first:
+      43: 4300038
+    second: GrassTile
+  - first:
+      43: 4300040
+    second: Tile_Area2
+  - first:
+      43: 4300042
+    second: Tile_Corner
+  - first:
+      43: 4300044
+    second: WaterTile.
+  - first:
+      43: 4300046
+    second: Tole_Med
+  - first:
+      43: 4300048
+    second: Tile_Area
+  - first:
+      43: 4300050
+    second: Tile_Intersection
+  - first:
+      43: 4300052
+    second: Tile_High
+  - first:
+      43: 4300054
+    second: Tree_3
+  - first:
+      43: 4300056
+    second: BenchTable
+  - first:
+      43: 4300058
+    second: DoubleBench
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 1
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 0
-    splitTangentsAcrossUV: 1
     normalImportMode: 1
-    tangentImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
