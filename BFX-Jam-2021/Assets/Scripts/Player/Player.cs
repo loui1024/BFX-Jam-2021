@@ -27,8 +27,10 @@ public class Player : MonoBehaviour {
 
     [Header("Sound")]
     public AudioClip[] m_JusticeSounds;
+    public AudioClip   m_ThrowSound;
 
     [Header("UI")]
+    [SerializeField] private GameObject m_ShopMenu;
     [SerializeField] private Image     m_ThrowPowerImage;
     [SerializeField] private Gradient  m_ThrowFillGradient;
     [SerializeField] private Animation m_JusticePopupImage;
@@ -231,9 +233,20 @@ public class Player : MonoBehaviour {
 
         throwObject.AddForce(m_Crosshair.forward * Mathf.LerpUnclamped(0, PlayerPreferences.Instance.m_ThrowPower, _power), ForceMode.VelocityChange);
         throwObject.AddRelativeTorque(new Vector3(0, 0, Random.Range(-PlayerPreferences.Instance.m_RandomSpin / 2, PlayerPreferences.Instance.m_RandomSpin / 2)));
+
+        AudioSource.PlayClipAtPoint(m_ThrowSound, throwObject.transform.position, 0.8f);
     }
 
     private void PInput() {
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            m_ShopMenu.SetActive(true);
+            m_PauseMenu.TogglePause(!m_PauseMenu.m_Paused);
+        }
+        else {
+            if (Input.GetKeyDown(KeyCode.Escape)) { m_PauseMenu.TogglePause(!m_PauseMenu.m_Paused); }
+        }
 
         if (!m_PauseMenu.m_Paused) { 
         
@@ -254,8 +267,6 @@ public class Player : MonoBehaviour {
                 m_ThrowInputHeld = false;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape)) { m_PauseMenu.TogglePause(!m_PauseMenu.m_Paused); }
     }
 
     private void PPhysicsInput() {
