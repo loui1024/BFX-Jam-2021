@@ -15,7 +15,7 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 919132149155446097, guid: d617d8257ea62ef4da65e97823e1a3bf, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -31,7 +31,7 @@ MonoBehaviour:
     name: tree_pineDefaultA
   - gameObject: {fileID: 919132149155446097, guid: 7bbe3a3acf013ed4580fae2fde74a6fa, type: 3}
     settings:
-      m_Strength: 31.78151
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -127,7 +127,7 @@ MonoBehaviour:
     name: tree_pineRoundC
   - gameObject: {fileID: 919132149155446097, guid: 32b2736407d91dd4ca356ff44bfa3090, type: 3}
     settings:
-      m_Strength: 25.042017
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -223,7 +223,7 @@ MonoBehaviour:
     name: tree_pineSmallC
   - gameObject: {fileID: 919132149155446097, guid: b0bc7042d5c73a2439f209f1af30d5e4, type: 3}
     settings:
-      m_Strength: 17.222696
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -319,7 +319,7 @@ MonoBehaviour:
     name: tree_pineTallC
   - gameObject: {fileID: 919132149155446097, guid: 45b14fd204ad4164bb399ebf74fc9058, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -399,7 +399,7 @@ MonoBehaviour:
     name: tree_plateau_dark
   - gameObject: {fileID: 919132149155446097, guid: d64a7926079d27141a84df1ab2f564fb, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -447,7 +447,7 @@ MonoBehaviour:
     name: tree_simple_fall
   - gameObject: {fileID: 919132149155446097, guid: 9e55a4bd318ebd646a8c6a79f2b82254, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -479,7 +479,7 @@ MonoBehaviour:
     name: tree_small_dark
   - gameObject: {fileID: 919132149155446097, guid: afb3ef0ce40142b4f9116d86af76922d, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -559,7 +559,7 @@ MonoBehaviour:
     name: tree_blocks
   - gameObject: {fileID: 919132149155446097, guid: 9c8c3f91c3b1a21429a1a46b9c35da1d, type: 3}
     settings:
-      m_Strength: 28.718487
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -687,7 +687,7 @@ MonoBehaviour:
     name: plant_flatTall
   - gameObject: {fileID: 919132149155446097, guid: 0279ac423495bc34988b50db6c9518a4, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -703,7 +703,7 @@ MonoBehaviour:
     name: plant_bush
   - gameObject: {fileID: 919132149155446097, guid: e3b2189e7106f2b4d8f6a4ce79950fcb, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -751,7 +751,7 @@ MonoBehaviour:
     name: plant_bushLargeTriangle
   - gameObject: {fileID: 919132149155446097, guid: a9a805cfd504b574bab61273b7f5ce4d, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 1
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -799,7 +799,7 @@ MonoBehaviour:
     name: plant_flatShort
   - gameObject: {fileID: 919132149155446097, guid: ec6734fc09a9aa44ab397d42fd859131, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 46.340343
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -815,7 +815,7 @@ MonoBehaviour:
     name: flower_yellowC
   - gameObject: {fileID: 919132149155446097, guid: 039532e14422a8c46bb52d2f48788fbe, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 58.819336
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -831,7 +831,7 @@ MonoBehaviour:
     name: flower_purpleA
   - gameObject: {fileID: 919132149155446097, guid: 1acb5cb462d673941857d81a138379a9, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 60.899166
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -847,7 +847,7 @@ MonoBehaviour:
     name: flower_purpleB
   - gameObject: {fileID: 919132149155446097, guid: 1d08fb30141cbbf40ac95a903eca48e9, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 48.420174
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -863,7 +863,7 @@ MonoBehaviour:
     name: flower_purpleC
   - gameObject: {fileID: 919132149155446097, guid: 685b116990f9a0c46b6fa1a21a72f60c, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 50.500008
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -879,7 +879,7 @@ MonoBehaviour:
     name: flower_redA
   - gameObject: {fileID: 919132149155446097, guid: 7834933d8a46e434db9290f8d6c21f98, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 38.021015
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -895,7 +895,7 @@ MonoBehaviour:
     name: flower_redB
   - gameObject: {fileID: 919132149155446097, guid: 0d5d431fbdedc294b88b6ea9013182bc, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 50.5
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -911,7 +911,7 @@ MonoBehaviour:
     name: flower_redC
   - gameObject: {fileID: 919132149155446097, guid: 8d4c1ff86970dff42be6b1b37bb8be2c, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 50.5
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -927,7 +927,7 @@ MonoBehaviour:
     name: flower_yellowA
   - gameObject: {fileID: 919132149155446097, guid: d681ebc1de5defa4892bd1a4e604c62e, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 56.739502
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 360, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
