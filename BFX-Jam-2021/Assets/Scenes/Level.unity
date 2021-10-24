@@ -38233,7 +38233,7 @@ MonoBehaviour:
   FractureTemplate: {fileID: 100000, guid: 093d28d5ab929a54abe7deb9b2c7b735, type: 3}
   PiecesParent: {fileID: 0}
   NumFracturePieces: 3
-  NumIterations: 2
+  NumIterations: 1
   NumGenerations: 2
   FractureRadius: 1
   UVScale: 1

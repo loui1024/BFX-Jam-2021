@@ -85,6 +85,8 @@ public class Player : MonoBehaviour {
 
             m_ThrowInput = -1.0f;
         }
+
+        Time.timeScale = Mathf.Lerp(Time.timeScale, 1.0f, Time.unscaledDeltaTime * 8.0f);
     }
 
     private void LateUpdate() {
@@ -197,6 +199,8 @@ public class Player : MonoBehaviour {
                 }
 
                 m_ThrowInputHeld = true;
+
+                Time.timeScale = 0.2f;
             }
             else {
                 if (m_ThrowInputHeld == true) {
@@ -205,8 +209,6 @@ public class Player : MonoBehaviour {
 
                 m_ThrowInputHeld = false;
             }
-
-            Time.timeScale = m_ThrowInputHeld ? 0.2f : 1.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) { m_PauseMenu.TogglePause(!m_PauseMenu.m_Paused); }
