@@ -18,6 +18,9 @@ public class Player : MonoBehaviour {
     [Header("Bike")]
     [SerializeField] private Transform m_Model;
 
+    [Header("Tank")]
+    [SerializeField] private Transform m_Turret;
+
     [Header("Throwing")]
     [SerializeField] private Transform m_Crosshair;
 
@@ -117,7 +120,8 @@ public class Player : MonoBehaviour {
         m_ThrowPowerImage.gameObject.SetActive(m_ThrowInputHeld);
 
         if (m_ThrowPowerImage.gameObject.activeSelf) {
-            float dir = m_Crosshair.transform.eulerAngles.y <= 45.0f || m_Crosshair.transform.eulerAngles.y > 225.0f ? 1.0f : -1.0f;
+
+            float dir = m_Crosshair.eulerAngles.y <= 45.0f || m_Crosshair.eulerAngles.y > 225.0f ? 1.0f : -1.0f;
 
             m_ThrowPowerImage.rectTransform.position = Vector3.Lerp(
                 m_ThrowPowerImage.rectTransform.position,
@@ -270,10 +274,12 @@ public class Player : MonoBehaviour {
             angle = Vector2.SignedAngle(new Vector2(0f, 1f), mousePos - bikePos);
         }
 
-        m_Crosshair.transform.rotation = Quaternion.Slerp(
-            m_Crosshair.transform.rotation, 
+        m_Crosshair.rotation = Quaternion.Slerp(
+            m_Crosshair.rotation, 
             Quaternion.Euler(new Vector3(0, 45.0f - angle, 0)), 
             Time.unscaledDeltaTime * 25.0f
         );
+
+        m_Turret.rotation = m_Crosshair.rotation;
     }
 }
