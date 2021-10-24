@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: _defaultMat
-    second: {fileID: 2100000, guid: bdef108f2ea6d324abecccd39c36be2c, type: 2}
+    second: {fileID: 2100000, guid: 1c6a61222630edc48abbf4784ca58d5a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: border
-    second: {fileID: 2100000, guid: 33db321e1dbc3dd4c8f672dc87155ea9, type: 2}
+    second: {fileID: 2100000, guid: 4a6d108bce827fb47859b37787b65b88, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: door
-    second: {fileID: 2100000, guid: 3cea55dfa5ccd1a4a9e300ed96b59f1b, type: 2}
+    second: {fileID: 2100000, guid: 42c35ae4eaab19a4c8ded92ed4807e7e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: roof
-    second: {fileID: 2100000, guid: 7c8f9767a08cfa342a3a97fb3891cc56, type: 2}
+    second: {fileID: 2100000, guid: 005f325fb46ce94419034e30215233ec, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: window
-    second: {fileID: 2100000, guid: 847d6fa83135c2b478f69f1995cb8aab, type: 2}
+    second: {fileID: 2100000, guid: af86e0d255cdacc45b84a8d8b9f2e836, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
