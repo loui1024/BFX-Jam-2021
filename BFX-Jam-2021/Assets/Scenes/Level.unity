@@ -31604,17 +31604,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cc4585fcb5b05c488ee9fc2295d185d, type: 3}
---- !u!114 &1126183751 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 785823829776830997, guid: c6772518325b6d642906e07fac4dba29, type: 3}
-  m_PrefabInstance: {fileID: 2006961829}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1128788083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47766,13 +47755,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4615722208261058251}
     - target: {fileID: 3787356014376020520, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
+      propertyPath: m_PauseMenu
+      value: 
+      objectReference: {fileID: 2006961831}
+    - target: {fileID: 3787356014376020520, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
       propertyPath: m_ThrowPowerImage
       value: 
-      objectReference: {fileID: 1126183751}
+      objectReference: {fileID: 2006961833}
     - target: {fileID: 3787356014376020520, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
       propertyPath: m_JusticePopupImage
       value: 
-      objectReference: {fileID: 2091996636}
+      objectReference: {fileID: 2006961832}
     - target: {fileID: 3787356014376020523, guid: eaf958ea7a258a049be7ee9988106d44, type: 3}
       propertyPath: m_Name
       value: Player
@@ -58728,6 +58721,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2006961831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8782826559046892662, guid: c6772518325b6d642906e07fac4dba29, type: 3}
+  m_PrefabInstance: {fileID: 2006961829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e036108d78b778d418d62daf3f39f4fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!111 &2006961832 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 8782826557898170369, guid: c6772518325b6d642906e07fac4dba29, type: 3}
+  m_PrefabInstance: {fileID: 2006961829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2006961833 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 935096699707671619, guid: c6772518325b6d642906e07fac4dba29, type: 3}
+  m_PrefabInstance: {fileID: 2006961829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2007830782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61957,11 +61977,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03b2e47478a2a77488e089ba11cada9a, type: 3}
---- !u!111 &2091996636 stripped
-Animation:
-  m_CorrespondingSourceObject: {fileID: 9223145378515711575, guid: c6772518325b6d642906e07fac4dba29, type: 3}
-  m_PrefabInstance: {fileID: 2006961829}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2092914278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63825,6 +63840,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1430428285}
     m_Modifications:
+    - target: {fileID: 4615722208395552408, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
+      propertyPath: near clip plane
+      value: 6.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4615722208395552409, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
       propertyPath: m_RootOrder
       value: 3

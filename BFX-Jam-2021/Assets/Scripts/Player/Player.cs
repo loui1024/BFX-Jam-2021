@@ -259,7 +259,7 @@ public class Player : MonoBehaviour {
         m_Crosshair.transform.rotation = Quaternion.Slerp(
             m_Crosshair.transform.rotation, 
             Quaternion.Euler(new Vector3(0, 45.0f - angle, 0)), 
-            Time.deltaTime * 25.0f
+            Time.unscaledDeltaTime * 25.0f
         );
     }
 }
