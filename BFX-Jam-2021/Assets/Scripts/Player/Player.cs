@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
+    /* SINGLETON */
+    public static Player Instance;
+
     /* REFERENCES */
     [SerializeField] private Rigidbody m_Rigidbody;
     [SerializeField] private Camera m_Camera;
@@ -21,6 +24,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private Gradient  m_ThrowFillGradient;
     [SerializeField] private Animation m_JusticePopupImage;
     [SerializeField] private PauseMenu m_PauseMenu;
+    [SerializeField] private Text      m_CurrencyText;
 
     /* PRIVATE */
     private Vector3 m_Motion;
@@ -28,8 +32,8 @@ public class Player : MonoBehaviour {
 
     private float m_ThrowPowerDir = 1.0f;
 
-    private float m_ThrowInput    = -1.0f;
-    private bool m_ThrowInputHeld = false;
+    private float m_ThrowInput     = -1.0f;
+    private bool  m_ThrowInputHeld = false;
 
     private bool m_JusticePopupTrigger = false;
     private bool m_LockJumpInput       = false;
@@ -53,10 +57,16 @@ public class Player : MonoBehaviour {
             if (value < 0) { value = 0; }
 
             m_Money = value;
+
+            m_CurrencyText.text = m_Money.ToString().PadLeft(4, '0');
         }
     }
 
     private void Awake() {
+
+        Instance = this;
+
+        m_Camera.layerCullSpherical = true;
 
         m_ThrowPool = new List<Rigidbody>(PlayerPreferences.Instance.m_ThrowPoolSize);
         m_JusticePopupImage.transform.localScale = ZERO3;

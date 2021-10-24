@@ -6,6 +6,7 @@ using UnityEngine;
 public class GamePreferences : ScriptableObject {
 
     /* SINGLETON */
+
     private static GamePreferences m_Instance;
     public static GamePreferences Instance {
         get {
@@ -23,4 +24,8 @@ public class GamePreferences : ScriptableObject {
     public float m_InitialTime;
     public float m_MaxTime;
     public float m_TimePerItemDelivered;
+
+    [Header("Money")]
+    public int m_ItemDeliveredReward;
+    public int m_CriminalKillReward;
 }

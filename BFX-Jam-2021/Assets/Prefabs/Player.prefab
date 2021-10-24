@@ -192,6 +192,8 @@ MonoBehaviour:
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   m_JusticePopupImage: {fileID: 0}
+  m_PauseMenu: {fileID: 0}
+  m_CurrencyText: {fileID: 0}
 --- !u!1 &3787356015492686945
 GameObject:
   m_ObjectHideFlags: 0

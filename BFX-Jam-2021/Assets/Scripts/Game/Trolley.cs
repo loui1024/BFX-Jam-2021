@@ -8,10 +8,13 @@ using UnityEditor;
 public class Trolley : MonoBehaviour {
     
     /* REFERENCES */
-    public Rigidbody m_Rigidbody;
+    public Rigidbody   m_Rigidbody;
     public Transform[] m_Waypoints;
 
     /* PUBLIC */
+    [Space]
+    public bool isCriminal = false;
+
     [Header("Stats")]
     public float m_Speed = 2.0f;
     public float m_Smoothness = 5.0f;
@@ -89,6 +92,10 @@ public class Trolley : MonoBehaviour {
 
         m_Rigidbody.isKinematic = false;
         m_Rigidbody.useGravity = true;
+
+        if (isCriminal) {
+            Player.Instance.Money += GamePreferences.Instance.m_CriminalKillReward;
+        }
 
         Destroy(this);
     }

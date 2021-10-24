@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour {
 
     private void OnItemDelivered(DeliveryPoint.ItemDeliveredArgs _args) {
 
+        Player.Instance.Money += GamePreferences.Instance.m_ItemDeliveredReward;
+
         m_TimeLeft += GamePreferences.Instance.m_TimePerItemDelivered;
 
         if (m_TimeLeft > GamePreferences.Instance.m_MaxTime) {
