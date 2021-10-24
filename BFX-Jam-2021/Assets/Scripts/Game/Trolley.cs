@@ -83,9 +83,14 @@ public class Trolley : MonoBehaviour {
                 }
 
                 m_Rigidbody.MovePosition(Vector3.MoveTowards(m_Rigidbody.position, target, Mathf.Abs(Time.fixedDeltaTime * m_Speed)));
-
             }
         }
+
+        m_Rigidbody.rotation = Quaternion.Slerp(
+            m_Rigidbody.rotation,
+            Quaternion.LookRotation(transform.position - m_Waypoints[m_TargetWaypoint].position),
+            Time.deltaTime * m_Smoothness
+        );
     }
 
     private void OnCollisionEnter(Collision collision) {
