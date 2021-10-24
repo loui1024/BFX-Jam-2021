@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 
     /* PRIVATE */
     [SerializeField] private Image m_TimerHandImage;
+    [SerializeField] private Text  m_DeliveriesRemainingText;
 
     public enum GameCompletionState { 
         Victory,
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour {
     private void Update() {
 
         UpdateTimerUI();
+        UpdateCurrencyUI();
 
         if (m_TimeLeft <= 0.0f) {
             GameComplete(GameCompletionState.Failure);
@@ -59,6 +61,10 @@ public class GameManager : MonoBehaviour {
         if (m_DeliveryPointsLeft.Count == 0) {
             GameComplete(GameCompletionState.Victory);
         }
+    }
+
+    private void UpdateCurrencyUI() {
+        m_DeliveriesRemainingText.text = m_DeliveryPointsLeft.Count.ToString();
     }
 
     private void UpdateTimerUI() {
