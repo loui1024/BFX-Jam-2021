@@ -25,6 +25,9 @@ public class Player : MonoBehaviour {
     [Header("Throwing")]
     [SerializeField] private Transform m_Crosshair;
 
+    [Header("Sound")]
+    public AudioClip[] m_JusticeSounds;
+
     [Header("UI")]
     [SerializeField] private Image     m_ThrowPowerImage;
     [SerializeField] private Gradient  m_ThrowFillGradient;
@@ -106,6 +109,8 @@ public class Player : MonoBehaviour {
                 shakeFrequency = 0.08f;
                 shakeAmount    = 20.0f;
                 shakeDuration  = 1.00f;
+
+                AudioSource.PlayClipAtPoint(m_JusticeSounds[Random.Range(0, m_JusticeSounds.Length)], m_Camera.transform.position, 0.3f);
             }
             else { 
                 shakeFrequency = Mathf.Lerp(0.04f, 0.08f, m_ThrowInput);
