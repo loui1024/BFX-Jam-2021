@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -244,9 +244,9 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: 1
+    value: 0.5
   contrast:
-    overrideState: 0
+    overrideState: 1
     value: 0
   mixerRedOutRedIn:
     overrideState: 0
@@ -1502,7 +1502,7 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 50, y: 95}
+    value: {x: 63.53843, y: 90.92661}
   minLuminance:
     overrideState: 1
     value: -4
@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a34fa72bd4185749832024e9c8010bf, type: 3}
   m_Name: ScreenSpaceReflections
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1607,13 +1607,13 @@ MonoBehaviour:
     value: 17
   aperture:
     overrideState: 1
-    value: 5.6
+    value: 13
   focalLength:
     overrideState: 1
-    value: 130
+    value: 200
   kernelSize:
     overrideState: 1
-    value: 1
+    value: 3
 --- !u!114 &5803391660051480492
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1673,7 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
