@@ -4,6 +4,7 @@ using UnityEngine;
 
 using UnityEditor;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Trolley : MonoBehaviour {
     
     /* REFERENCES */
@@ -82,6 +83,14 @@ public class Trolley : MonoBehaviour {
 
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+
+        m_Rigidbody.isKinematic = false;
+        m_Rigidbody.useGravity = true;
+
+        Destroy(this);
     }
 
 #if UNITY_EDITOR
