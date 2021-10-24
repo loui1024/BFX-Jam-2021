@@ -987,6 +987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: path_wood (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
 --- !u!1001 &64183573
@@ -8756,6 +8760,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: path_woodCorner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 53f321e70df56bc46a9deac0cd6e5fc2, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f321e70df56bc46a9deac0cd6e5fc2, type: 3}
 --- !u!1001 &481639189
@@ -10286,6 +10294,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
       propertyPath: m_Name
       value: path_wood (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
@@ -15069,6 +15081,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: path_woodEnd
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: c2b917b0384b2e1488b300fb5e885523, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b917b0384b2e1488b300fb5e885523, type: 3}
 --- !u!1001 &840807174
@@ -15728,6 +15744,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 53f321e70df56bc46a9deac0cd6e5fc2, type: 3}
       propertyPath: m_Name
       value: path_woodCorner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 53f321e70df56bc46a9deac0cd6e5fc2, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f321e70df56bc46a9deac0cd6e5fc2, type: 3}
@@ -17609,7 +17629,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: truckFlat
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5924842554561939398, guid: fbf0829d010c4494b88ecc5c8bd32604, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7574479491763837379, guid: fbf0829d010c4494b88ecc5c8bd32604, type: 3}
+    - {fileID: 1774592877285671039, guid: fbf0829d010c4494b88ecc5c8bd32604, type: 3}
+    - {fileID: 4887835608239675877, guid: fbf0829d010c4494b88ecc5c8bd32604, type: 3}
+    - {fileID: -9115180533470586574, guid: fbf0829d010c4494b88ecc5c8bd32604, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fbf0829d010c4494b88ecc5c8bd32604, type: 3}
 --- !u!1001 &942822144
 PrefabInstance:
@@ -19387,6 +19415,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 53f321e70df56bc46a9deac0cd6e5fc2, type: 3}
       propertyPath: m_Name
       value: path_woodCorner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 53f321e70df56bc46a9deac0cd6e5fc2, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f321e70df56bc46a9deac0cd6e5fc2, type: 3}
@@ -23011,6 +23043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: path_wood (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
 --- !u!1001 &1219381642
@@ -24453,7 +24489,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: police
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5924842554561939398, guid: 25acf1c1c99746d41a9fbb83d248cfe8, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7574479491763837379, guid: 25acf1c1c99746d41a9fbb83d248cfe8, type: 3}
+    - {fileID: 1774592877285671039, guid: 25acf1c1c99746d41a9fbb83d248cfe8, type: 3}
+    - {fileID: 4887835608239675877, guid: 25acf1c1c99746d41a9fbb83d248cfe8, type: 3}
+    - {fileID: -9115180533470586574, guid: 25acf1c1c99746d41a9fbb83d248cfe8, type: 3}
+    - {fileID: -6179093075204696246, guid: 25acf1c1c99746d41a9fbb83d248cfe8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 25acf1c1c99746d41a9fbb83d248cfe8, type: 3}
 --- !u!1001 &1282169234
 PrefabInstance:
@@ -31181,6 +31226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: path_wood
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d2e7ded010f53428026b6a80e4cc04, type: 3}
 --- !u!1001 &1624548850
@@ -35171,6 +35220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crops_dirtRow
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: c5bf6325a6e4e644788f4ced28c0e1ae, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5bf6325a6e4e644788f4ced28c0e1ae, type: 3}
 --- !u!1001 &1791673908
@@ -38723,7 +38776,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: hatchbackSports
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5924842554561939398, guid: 6b4ca55fe4ecf6a40b83e682cc324d67, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7574479491763837379, guid: 6b4ca55fe4ecf6a40b83e682cc324d67, type: 3}
+    - {fileID: 1774592877285671039, guid: 6b4ca55fe4ecf6a40b83e682cc324d67, type: 3}
+    - {fileID: 4887835608239675877, guid: 6b4ca55fe4ecf6a40b83e682cc324d67, type: 3}
+    - {fileID: -9115180533470586574, guid: 6b4ca55fe4ecf6a40b83e682cc324d67, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b4ca55fe4ecf6a40b83e682cc324d67, type: 3}
 --- !u!1001 &1946881930
 PrefabInstance:
@@ -43279,6 +43340,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c2b917b0384b2e1488b300fb5e885523, type: 3}
       propertyPath: m_Name
       value: path_woodEnd (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: c2b917b0384b2e1488b300fb5e885523, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b917b0384b2e1488b300fb5e885523, type: 3}
