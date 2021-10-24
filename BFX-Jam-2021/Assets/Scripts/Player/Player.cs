@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
     /* REFERENCES */
     [SerializeField] private Rigidbody m_Rigidbody;
     [SerializeField] private Camera m_Camera;
+    [SerializeField] private CinemachineVirtualCamera m_CinemachineVirtualCamera;
 
     [Header("Bike")]
     [SerializeField] private Transform m_Model;
@@ -94,9 +95,27 @@ public class Player : MonoBehaviour {
         PInput();
 
         if (m_ThrowInput > 0.0f) {
-            m_JusticePopupTrigger = m_ThrowInput >= 0.8f;
+
+            float shakeFrequency;
+            float shakeAmount;
+            float shakeDuration;
+
+            if (m_JusticePopupTrigger = m_ThrowInput >= 0.8f) {
+                ShockWave.Get(m_Camera).StartIt(transform.position + (transform.rotation * PlayerPreferences.Instance.m_ThrowOffset), 5.0f, 0.05f, 0.03f, 0.25f);
+
+                shakeFrequency = 0.08f;
+                shakeAmount    = 20.0f;
+                shakeDuration  = 1.00f;
+            }
+            else { 
+                shakeFrequency = Mathf.Lerp(0.04f, 0.08f, m_ThrowInput);
+                shakeAmount    = Mathf.Lerp(0.00f, 15.0f, m_ThrowInput);
+                shakeDuration  = Mathf.Lerp(0.50f, 0.80f, m_ThrowInput);
+            }
             
             PThrow(m_ThrowInput);
+
+            StartCoroutine(PCameraShake(shakeFrequency, shakeAmount, shakeDuration));
 
             m_ThrowInput = -1.0f;
         }
@@ -281,5 +300,24 @@ public class Player : MonoBehaviour {
         );
 
         m_Turret.rotation = m_Crosshair.rotation;
+    }
+
+    private IEnumerator PCameraShake(float _frequency, float _amplitude, float _duration) {
+
+        var noise = m_CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        float initialDuration = _duration;
+
+        while (_duration > 0.0f) {
+
+            float progress = 1.0f - (_duration / initialDuration);
+
+            noise.m_AmplitudeGain = Mathf.SmoothStep(_amplitude, 0.0f, progress); 
+            noise.m_FrequencyGain = Mathf.SmoothStep(_frequency, 0.0f, progress);
+
+            _duration -= Time.deltaTime;
+
+            yield return null;
+        }
     }
 }
