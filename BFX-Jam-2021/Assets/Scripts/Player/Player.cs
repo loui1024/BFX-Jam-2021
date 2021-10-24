@@ -17,9 +17,10 @@ public class Player : MonoBehaviour {
     [SerializeField] private Transform m_Crosshair;
 
     [Header("UI")]
-    [SerializeField] private Image m_ThrowPowerImage;
-    [SerializeField] private Gradient m_ThrowFillGradient;
+    [SerializeField] private Image     m_ThrowPowerImage;
+    [SerializeField] private Gradient  m_ThrowFillGradient;
     [SerializeField] private Animation m_JusticePopupImage;
+    [SerializeField] private PauseMenu m_PauseMenu;
 
     /* PRIVATE */
     private Vector3 m_Motion;
@@ -107,10 +108,10 @@ public class Player : MonoBehaviour {
             m_ThrowPowerImage.rectTransform.position = Vector3.Lerp(
                 m_ThrowPowerImage.rectTransform.position,
                 m_Camera.WorldToScreenPoint(transform.position) + new Vector3(90 * dir, 0, 0),
-                Time.deltaTime * 8.0f
+                Time.unscaledDeltaTime * 8.0f
             );
 
-            m_ThrowPowerImage.fillAmount += ((m_ThrowPowerImage.fillAmount * Time.deltaTime * 4.0f) + Time.deltaTime) * m_ThrowPowerDir;
+            m_ThrowPowerImage.fillAmount += ((m_ThrowPowerImage.fillAmount * Time.unscaledDeltaTime * 4.0f) + Time.unscaledDeltaTime) * m_ThrowPowerDir;
 
             if (m_ThrowPowerImage.fillAmount >= 1.0f || m_ThrowPowerImage.fillAmount <= 0.0f) {
                 m_ThrowPowerDir *= -1f;
@@ -188,21 +189,27 @@ public class Player : MonoBehaviour {
 
     private void PInput() {
 
-        if (Input.GetAxis("Fire1") > 0.2f) {
+        if (!m_PauseMenu.m_Paused) { 
+        
+            if (Input.GetAxis("Fire1") > 0.2f) {
+                if (!m_ThrowInputHeld) {
+                    m_ThrowPowerImage.fillAmount = Random.Range(0.0f, 0.6f);
+                }
 
-            if (!m_ThrowInputHeld) {
-                m_ThrowPowerImage.fillAmount = Random.Range(0.0f, 0.6f);
+                m_ThrowInputHeld = true;
+            }
+            else {
+                if (m_ThrowInputHeld == true) {
+                    m_ThrowInput = m_ThrowPowerImage.fillAmount;
+                }
+
+                m_ThrowInputHeld = false;
             }
 
-            m_ThrowInputHeld = true;
+            Time.timeScale = m_ThrowInputHeld ? 0.2f : 1.0f;
         }
-        else {
-            if (m_ThrowInputHeld == true) {
-                m_ThrowInput = m_ThrowPowerImage.fillAmount;
-            }
 
-            m_ThrowInputHeld = false;
-        }
+        if (Input.GetKeyDown(KeyCode.Escape)) { m_PauseMenu.TogglePause(!m_PauseMenu.m_Paused); }
     }
 
     private void PPhysicsInput() {
