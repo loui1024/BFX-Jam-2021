@@ -13,8 +13,10 @@ public class DeliveryPoint : MonoBehaviour {
 
     public class ItemDeliveredArgs : EventArgs {
 
-        public ItemDeliveredArgs() {
+        public DeliveryPoint m_Instigator { get; private set; }
 
+        public ItemDeliveredArgs(DeliveryPoint _instigator) {
+            m_Instigator = _instigator;
         }
     }
 
@@ -22,7 +24,7 @@ public class DeliveryPoint : MonoBehaviour {
 
         if (other.transform.tag == "Newspaper") {
 
-            ItemDelivered?.Invoke(new ItemDeliveredArgs());
+            ItemDelivered?.Invoke(new ItemDeliveredArgs(this));
 
             Destroy(gameObject);
         }        
