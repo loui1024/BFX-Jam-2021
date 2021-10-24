@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4de746943cea8a49be4064b91e6fae2, type: 3}
   m_Name: GamePreferences
   m_EditorClassIdentifier: 
-  m_InitialTime: 30
-  m_MaxTime: 30
-  m_TimePerItemDelivered: 10
+  m_InitialTime: 60
+  m_MaxTime: 60
+  m_TimePerItemDelivered: 5
   m_ItemDeliveredReward: 15
   m_CriminalKillReward: 50
