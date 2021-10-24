@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InitialTime: 60
   m_MaxTime: 60
-  m_TimePerItemDelivered: 5
+  m_TimePerItemDelivered: 10
   m_ItemDeliveredReward: 15
   m_CriminalKillReward: 50
