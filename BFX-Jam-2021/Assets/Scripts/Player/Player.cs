@@ -235,6 +235,10 @@ public class Player : MonoBehaviour {
             angle = Vector2.SignedAngle(new Vector2(0f, 1f), mousePos - bikePos);
         }
 
-        m_Crosshair.transform.eulerAngles = new Vector3(0, 45.0f - angle, 0);
+        m_Crosshair.transform.rotation = Quaternion.Slerp(
+            m_Crosshair.transform.rotation, 
+            Quaternion.Euler(new Vector3(0, 45.0f - angle, 0)), 
+            Time.deltaTime * 25.0f
+        );
     }
 }
