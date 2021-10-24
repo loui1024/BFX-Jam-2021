@@ -14,8 +14,14 @@ public class GameManager : MonoBehaviour {
     public List<DeliveryPoint> m_DeliveryPointsLeft { get; private set; }
 
     /* PRIVATE */
+    private List<GameObject> m_UIDeliveryPointsIndicators;
+    
     [SerializeField] private Image m_TimerHandImage;
     [SerializeField] private Text  m_DeliveriesRemainingText;
+    [SerializeField] private RectTransform m_Minimap;
+    [SerializeField] private GameObject m_MinimapDeliveryPointPrefab;
+    [SerializeField] private float m_MinimapItemScaleAdjustment;
+    [SerializeField] private Vector3 m_MinimapItemOffset;
 
     public enum GameCompletionState { 
         Victory,
@@ -23,11 +29,22 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Awake() {
+
         Instance = this;
 
         m_TimeLeft = GamePreferences.Instance.m_InitialTime;
 
         m_DeliveryPointsLeft = new List<DeliveryPoint>(GameObject.FindObjectsOfType<DeliveryPoint>());
+        m_UIDeliveryPointsIndicators = new List<GameObject>();
+
+        foreach (var item in m_DeliveryPointsLeft) {
+
+            var indicator = GameObject.Instantiate(m_MinimapDeliveryPointPrefab, m_Minimap);
+
+            indicator.transform.localPosition = (new Vector3(item.transform.position.x, item.transform.position.z, 0) + m_MinimapItemOffset) * m_MinimapItemScaleAdjustment;
+
+            m_UIDeliveryPointsIndicators.Add(indicator);
+        }
 
         DeliveryPoint.ItemDelivered += OnItemDelivered;
     }
@@ -35,7 +52,6 @@ public class GameManager : MonoBehaviour {
     private void Update() {
 
         UpdateTimerUI();
-        UpdateCurrencyUI();
 
         if (m_TimeLeft <= 0.0f) {
             GameComplete(GameCompletionState.Failure);
@@ -56,15 +72,23 @@ public class GameManager : MonoBehaviour {
             m_TimeLeft = GamePreferences.Instance.m_MaxTime;
         }
 
-        m_DeliveryPointsLeft.Remove(_args.m_Instigator);
+        int index = m_DeliveryPointsLeft.IndexOf(_args.m_Instigator);
+
+        m_DeliveryPointsLeft.RemoveAt(index);
+        Destroy(m_UIDeliveryPointsIndicators[index]);
+        m_UIDeliveryPointsIndicators.RemoveAt(index);
 
         if (m_DeliveryPointsLeft.Count == 0) {
             GameComplete(GameCompletionState.Victory);
         }
+
+        UpdateDeliveriesUI();
     }
 
-    private void UpdateCurrencyUI() {
+    private void UpdateDeliveriesUI() {
         m_DeliveriesRemainingText.text = m_DeliveryPointsLeft.Count.ToString();
+
+
     }
 
     private void UpdateTimerUI() {
