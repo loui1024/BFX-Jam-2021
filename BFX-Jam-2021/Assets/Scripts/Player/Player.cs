@@ -4,6 +4,8 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
+using Cinemachine;
+
 public class Player : MonoBehaviour {
 
     /* SINGLETON */
