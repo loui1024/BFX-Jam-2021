@@ -71,47 +71,51 @@ public class Trolley : MonoBehaviour {
 
     private void FixedUpdate() {
 
-        if (m_Waypoints != null && m_Waypoints.Length != 0) {
+        if ((transform.position - Player.Instance.transform.position).sqrMagnitude < 80.0f * 80.0f) { 
+        
+            if (m_Waypoints != null && m_Waypoints.Length != 0) {
 
-            if (m_Speed != 0) {
+                if (m_Speed != 0) {
 
-                int direction = (m_Speed > 0) ? 1 : -1;
+                    int direction = (m_Speed > 0) ? 1 : -1;
 
-                switch (m_MovementType) {
-                    case MovementType.Once: {
-                        m_TargetWaypoint = Mathf.Clamp(m_CurrentWaypoint + direction, 0, m_Waypoints.Length - 1);
-                        break;
+                    switch (m_MovementType) {
+                        case MovementType.Once: {
+                            m_TargetWaypoint = Mathf.Clamp(m_CurrentWaypoint + direction, 0, m_Waypoints.Length - 1);
+                            break;
+                        }
+                        case MovementType.PingPong: {
+                            m_TargetWaypoint = (int)Mathf.PingPong(m_CurrentWaypoint + direction, m_Waypoints.Length - 1);
+                            break;
+                        }
+                        case MovementType.Continuous: {
+                            m_TargetWaypoint = (int)Mathf.Repeat(m_CurrentWaypoint + direction, m_Waypoints.Length);
+                            break;
+                        }
                     }
-                    case MovementType.PingPong: {
-                        m_TargetWaypoint = (int)Mathf.PingPong(m_CurrentWaypoint + direction, m_Waypoints.Length - 1);
-                        break;
+
+                    var target = m_Waypoints[m_TargetWaypoint].position;
+
+                    if ((m_Rigidbody.position - target).sqrMagnitude < 0.1f) {
+                        if (m_MovementType == MovementType.PingPong) {
+                            m_CurrentWaypoint++;
+                        }
+                        else {
+                            m_CurrentWaypoint = m_TargetWaypoint;
+                        }
                     }
-                    case MovementType.Continuous: {
-                        m_TargetWaypoint = (int)Mathf.Repeat(m_CurrentWaypoint + direction, m_Waypoints.Length);
-                        break;
-                    }
+
+                    m_Rigidbody.MovePosition(Vector3.MoveTowards(m_Rigidbody.position, target, Mathf.Abs(Time.fixedDeltaTime * m_Speed)));
                 }
-
-                var target = m_Waypoints[m_TargetWaypoint].position;
-
-                if ((m_Rigidbody.position - target).sqrMagnitude < 0.1f) {
-                    if (m_MovementType == MovementType.PingPong) {
-                        m_CurrentWaypoint++;
-                    }
-                    else {
-                        m_CurrentWaypoint = m_TargetWaypoint;
-                    }
-                }
-
-                m_Rigidbody.MovePosition(Vector3.MoveTowards(m_Rigidbody.position, target, Mathf.Abs(Time.fixedDeltaTime * m_Speed)));
             }
+
+            m_Rigidbody.rotation = Quaternion.Slerp(
+                m_Rigidbody.rotation,
+                Quaternion.LookRotation(transform.position - m_Waypoints[m_TargetWaypoint].position),
+                Time.deltaTime * m_Smoothness
+            );
         }
 
-        m_Rigidbody.rotation = Quaternion.Slerp(
-            m_Rigidbody.rotation,
-            Quaternion.LookRotation(transform.position - m_Waypoints[m_TargetWaypoint].position),
-            Time.deltaTime * m_Smoothness
-        );
     }
 
     private void OnCollisionEnter(Collision collision) {
