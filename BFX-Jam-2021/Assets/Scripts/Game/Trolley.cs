@@ -13,7 +13,8 @@ public class Trolley : MonoBehaviour {
 
     /* PUBLIC */
     [Space]
-    public bool isCriminal = false;
+    public bool isCriminal   = false;
+    public bool isPedestrian = false;
 
     [Header("Stats")]
     public float m_Speed = 2.0f;
@@ -45,7 +46,27 @@ public class Trolley : MonoBehaviour {
             }
         }
 
-        m_Rigidbody.position = m_Waypoints[m_CurrentWaypoint].position;
+        if (isPedestrian) {
+            m_Speed *= Random.Range(0.5f, 1.0f);
+
+            if (Random.Range(0.0f, 1.0f) > 0.5f) {
+                System.Array.Reverse(m_Waypoints);
+            }
+
+            var renderer = GetComponentInChildren<Renderer>();
+
+            string materialName = renderer.material.name.TrimEnd(" (Instance)".ToCharArray());
+
+            isCriminal = materialName == "CriminalMaleA";
+        }
+
+        // Spawn at random point on path.
+        int randomWaypoint = Random.Range(0, m_Waypoints.Length - 1);
+
+        m_CurrentWaypoint = randomWaypoint;
+
+        m_Rigidbody.position = Vector3.Lerp(m_Waypoints[randomWaypoint].position, m_Waypoints[randomWaypoint + 1].position, Random.Range(0.0f, 1.0f));
+
     }
 
     private void FixedUpdate() {
@@ -95,14 +116,18 @@ public class Trolley : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
 
-        m_Rigidbody.isKinematic = false;
-        m_Rigidbody.useGravity = true;
+        if (collision.impulse.sqrMagnitude > 40.0f * 40.0f) {
 
-        if (isCriminal) {
-            Player.Instance.Money += GamePreferences.Instance.m_CriminalKillReward;
+            m_Rigidbody.isKinematic = false;
+            m_Rigidbody.useGravity  = true;
+
+            if (isCriminal) {
+                Player.Instance.Money += GamePreferences.Instance.m_CriminalKillReward;
+            }
+
+            Destroy(this);
         }
 
-        Destroy(this);
     }
 
 #if UNITY_EDITOR

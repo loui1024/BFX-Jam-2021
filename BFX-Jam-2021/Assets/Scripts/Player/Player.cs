@@ -120,13 +120,17 @@ public class Player : MonoBehaviour {
             m_ThrowInput = -1.0f;
         }
 
-        Time.timeScale = Mathf.Lerp(Time.timeScale, 1.0f, Time.unscaledDeltaTime * 8.0f);
+        if (!m_PauseMenu.m_Paused) {
+            Time.timeScale = Mathf.Lerp(Time.timeScale, 1.0f, Time.unscaledDeltaTime * 8.0f);
+        }
     }
 
     private void LateUpdate() {
-        PModel();
-        PCrosshair();
-        PUI();
+        if (!m_PauseMenu.m_Paused) {
+            PModel();
+            PCrosshair();
+            PUI();
+        }
     }
 
     private void FixedUpdate() {
