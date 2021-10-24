@@ -34767,6 +34767,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 835f2218103b3724f9dd1dba4f23f2bd, type: 3}
   m_PrefabInstance: {fileID: 2018351520}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1232458189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5660402449583256396, guid: 3b170e51b09545e479c04170eeabb17b, type: 3}
+  m_PrefabInstance: {fileID: 4410790928318126934}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1232949813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58708,6 +58719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 8782826559046892662, guid: c6772518325b6d642906e07fac4dba29, type: 3}
+      propertyPath: m_PausedImageEffect
+      value: 
+      objectReference: {fileID: 1232458189}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6772518325b6d642906e07fac4dba29, type: 3}
 --- !u!114 &2006961830 stripped
