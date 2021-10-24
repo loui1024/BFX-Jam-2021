@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 
     /* REFERENCES */
     [SerializeField] private Rigidbody m_Rigidbody;
-    [SerializeField] private Camera    m_Camera;
+    [SerializeField] private Camera m_Camera;
 
     [Header("Bike")]
     [SerializeField] private Transform m_Model;
@@ -23,23 +23,37 @@ public class Player : MonoBehaviour {
 
     /* PRIVATE */
     private Vector3 m_Motion;
-
     private Vector2 m_MoveInput;
-
-    private bool  m_ThrowInputHeld = false;
-    private float m_ThrowInput     = -1.0f;
-
-    private bool m_JusticePopupTrigger = false;
-    private bool m_LockJumpInput  = false;
-    private bool m_JumpInput      = false;
 
     private float m_ThrowPowerDir = 1.0f;
 
+    private float m_ThrowInput    = -1.0f;
+    private bool m_ThrowInputHeld = false;
+
+    private bool m_JusticePopupTrigger = false;
+    private bool m_LockJumpInput       = false;
+    private bool m_JumpInput           = false;
+
     private int m_CurrentPoolItem = 0;
+
     private List<Rigidbody> m_ThrowPool;
 
     private readonly Vector3 ZERO3 = new Vector3();
     private readonly Vector2 ZERO2 = new Vector2();
+
+    /* PROPERTIES */
+
+    private int m_Money = 0;
+    public int Money {
+        get {
+            return m_Money;    
+        }
+        set {
+            if (value < 0) { value = 0; }
+
+            m_Money = value;
+        }
+    }
 
     private void Awake() {
 
