@@ -234,7 +234,7 @@ public class Player : MonoBehaviour {
         throwObject.AddForce(m_Crosshair.forward * Mathf.LerpUnclamped(0, PlayerPreferences.Instance.m_ThrowPower, _power), ForceMode.VelocityChange);
         throwObject.AddRelativeTorque(new Vector3(0, 0, Random.Range(-PlayerPreferences.Instance.m_RandomSpin / 2, PlayerPreferences.Instance.m_RandomSpin / 2)));
 
-        AudioSource.PlayClipAtPoint(m_ThrowSound, throwObject.transform.position, 0.8f);
+        AudioSource.PlayClipAtPoint(m_ThrowSound, throwObject.transform.position, 1.0f);
     }
 
     private void PInput() {
